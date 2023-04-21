@@ -4,6 +4,11 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
+/**
+ * main - entry point
+ * Description:if statement for positive and negative number
+ * Return: always 0 (success)
+ */
 int main(void)
 {
 	int n;
