@@ -1,12 +1,14 @@
-#include "main.h"
+#include <stdio.h>
+int _putchar(char c);
+
 /**
  * main - entry point
- * Description: prints the _putchar to stdout
- * Return 0
+ *
+ * Return: 0 Success
  */
 int main(void)
 {
-	_putchar('_')
+	_putchar('_');
 	_putchar('p');
 	_putchar('u');
 	_putchar('t');
@@ -14,6 +16,6 @@ int main(void)
 	_putchar('h');
 	_putchar('a');
 	_putchar('r');
-	_putchar('\n')
+	_putchar('\n');
 	return (0);
 }
