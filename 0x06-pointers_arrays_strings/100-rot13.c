@@ -1,46 +1,28 @@
 #include "main.h"
-
 /**
- * _atoi - converts a string to an integer
- * @s: string to be converted
- *
- * Return: the int converted from the string
+ * rot13 - encodes a string using rot13
+ * @s: input string.
+ * Return: the pointer to dest.
  */
-int _atoi(char *s)
+
+char *rot13(char *s)
 {
-	int i, d, n, len, f, digit;
+	int f, q;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
+	char *x = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *y = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (s[len] != '\0')
-		len++;
-
-	while (i < len && f == 0)
+	for (f = 0; s[f] != '\0'; f++)
 	{
-		if (s[i] == '-')
-			++d;
-
-		if (s[i] >= '0' && s[i] <= '9')
+		for (q = 0; x[q] != '\0'; q++)
 		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
+			if (s[f] == x[q])
+			{
+				s[f] = y[q];
 				break;
-			f = 0;
+			}
 		}
-		i++;
 	}
 
-	if (f == 0)
-		return (0);
-
-	return (n);
+	return (s);
 }
