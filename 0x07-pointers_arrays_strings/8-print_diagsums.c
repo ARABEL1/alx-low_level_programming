@@ -1,19 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * print_chessboard - print a chessboard.
+ * print_diagsums - print additions of the two diagonals.
  * @a: source matrix
- * Return: chessboard.
+ * @size: size NxN of matrix
+ *
+ * Return: Always 0 (success)
  */
-void print_chessboard(char (*a)[8])
+void print_diagsums(int *a, int size)
 {
-	int n, y;
+	int k, h, sumdiagonal1 = 0, sumdiagonal2 = 0, step1, step2;
 
-	for (n = 0; n <= 7; n++)
+	for (k = 0; k <= (size - 1); k++)
 	{
-		for (y = 0; y <= 7; y++)
-		{
-			_putchar(a[n][y]);
-		}
-		_putchar('\n');
+		step1 =  (size + 1) * k;
+		sumdiagonal1 = sumdiagonal1 + *(a + step1);
 	}
+
+	for (h = 1; h <= size; h++)
+	{
+		step2 = (size - 1) * h;
+		sumdiagonal2 = sumdiagonal2 + *(a + step2);
+	}
+	printf("%d, %d\n", sumdiagonal1, sumdiagonal2);
 }
