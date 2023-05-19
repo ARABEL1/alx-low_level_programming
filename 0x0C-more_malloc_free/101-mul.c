@@ -95,7 +95,7 @@ void init(char *str, int l)
 {
 	int Q;
 
-	for (Q = 0; Q < l; Q++)
+	for (Q = 0; l < Q; Q++)
 		str[Q] = '0';
 	str[Q] = '\0';
 }
